@@ -1,0 +1,134 @@
+{extends file="layout.html"}
+{block name="content"}
+<div class="aw-container-wrap">
+	<div class="container category">
+		<div class="row">
+			<div class="col-sm-12">
+				{foreach $cat_list as $v}
+				<dl>
+					<dt>
+						<img alt="默认分类" src="{THUMB_PATH}{$v['cat_logo']}">
+					</dt>
+					<dd>
+						<p class="title">
+							<a href="category.html">{$v['cat_name']}</a>
+						</p>
+						<span>默认分类描述</span>
+					</dd>
+				</dl>
+				{/foreach}
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="aw-content-wrap clearfix">
+				<div class="col-sm-12 col-md-9 aw-main-content">
+					<!-- end 新消息通知 -->
+					<!-- tab切换 -->
+					<ul class="nav nav-tabs aw-nav-tabs active hidden-xs">
+						<li>
+							<a href="">等待回复</a>
+						</li>
+						<li>
+							<a id="sort_control_hot" href="">热门</a>
+						</li>
+						<li>
+							<a href="">推荐</a>
+						</li>
+						<li class="active">
+							<a href="">最新</a>
+						</li>
+
+						<h2 class="hidden-xs">
+							<i class="icon icon-list"></i>
+							发现
+						</h2>
+					</ul>
+					<!-- end tab切换 -->
+
+					<div class="aw-mod aw-explore-list">
+						<div class="mod-body">
+							<div class="aw-common-list" id="content">
+
+							</div>
+						</div>
+						<div class="mod-footer">
+
+							<div class="page-control" id="pages">
+                                
+							</div>
+                        
+                            <script>
+        goPage(1);
+</script>
+						</div>
+					</div>
+				</div>
+
+				<!-- 侧边栏 -->
+				<div class="col-sm-12 col-md-3 aw-side-bar hidden-xs hidden-sm">
+					<div class="aw-mod aw-text-align-justify">
+						<div class="mod-head">
+							<a class="pull-right" href="topic_index.html">更多 &gt;</a>
+							<h3>热门话题</h3>
+						</div>
+						<div class="mod-body">
+							{foreach $topic_list as $v}
+							<dl>
+								<dt class="pull-left aw-border-radius-5">
+									<a href="topic.html">
+										<img src="{HOME}/common/avatar-mid-img.png" alt=""></a>
+								</dt>
+								<dd class="pull-left">
+									<p class="clearfix">
+										<span class="topic-tag">
+											<a data-id="4" class="text" href="topic.html">{$v['topic_title']}</a>
+										</span>
+									</p>
+									<p>
+										<b>{$v['focus_count']|default:11}</b>
+										个问题,
+										<b>{$v['talk_count']|default:99}</b>
+										人关注
+									</p>
+								</dd>
+							</dl>
+							{/foreach}
+						</div>
+					</div>
+					<div class="aw-mod aw-text-align-justify">
+						<div class="mod-head">
+							<a class="pull-right" href="?/people/">更多 &gt;</a>
+							<h3>热门用户</h3>
+						</div>
+						{foreach $hot_user as $v}
+						<div class="mod-body">
+
+							<dl>
+								<dt class="pull-left aw-border-radius-5">
+									<a href="people.html">
+										<img src="{HOME}/common/avatar-mid-img.png" alt=""></a>
+								</dt>
+								<dd class="pull-left">
+									<a class="aw-user-name" data-id="2" href="people.html">{$v['username']}</a>
+									<p class="signature"></p>
+									<p>
+										<b>{$v['q_num']}</b>
+										个问题,
+										<b>0</b>
+										次赞同
+									</p>
+								</dd>
+							</dl>
+						</div>
+						{/foreach}
+					</div>
+				</div>
+				<!-- end 侧边栏 -->
+			</div>
+		</div>
+	</div>
+</div>
+{/block}

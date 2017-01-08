@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta content="IE=edge,Chrome=1" http-equiv="X-UA-Compatible">
+	<meta content="webkit" name="renderer">
+	<title>注册 - 有问必答</title>
+	<meta content="有问必答,知识社区,社交社区,问答社区" name="keywords">
+	<meta content="有问必答 社交化知识社区" name="description">
+<link type="image/x-icon" rel="shortcut icon" href="{HOME}/css/default/img/favicon.ico?v=20151125">
+
+<link href="{HOME}/css/bootstrap.css" type="text/css" rel="stylesheet">
+<link href="{HOME}/css/icon.css" type="text/css" rel="stylesheet">
+
+<link type="text/css" rel="stylesheet" href="{HOME}/css/default/common.css?v=20151125">
+<link type="text/css" rel="stylesheet" href="{HOME}/css/default/link.css?v=20151125">
+<link type="text/css" rel="stylesheet" href="{HOME}/js/plug_module/style.css?v=20151125">
+<link type="text/css" rel="stylesheet" href="{HOME}/css/default/register.css?v=20151125">
+
+<script type="text/javascript" src="{HOME}/js/jquery.2.js?v=20151125"></script>
+<script type="text/javascript" src="{HOME}/js/jquery.form.js?v=20151125"></script>
+<script type="text/javascript" src="{HOME}/js/plug_module/plug-in_module.js?v=20151125"></script>
+<script type="text/javascript" src="{HOME}/js/aws.js?v=20151125"></script>
+<script type="text/javascript" src="{HOME}/js/aw_template.js?v=20151125"></script>
+<script src="{HOME}/js/compatibility.js" type="text/javascript"></script>
+<script src="{HOME}/js/ajax.js" type="text/javascript"></script>
+<script src="{HOME}/js/common.js" type="text/javascript"></script>
+<script src="{HOME}/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+<!--[if lte IE 8]>
+<script type="text/javascript" src="{HOME}/js/respond.js"></script>
+<![endif]-->
+</head>
+
+<body>
+<noscript id="noscript" unselectable="on">
+	<div class="aw-404 aw-404-wrap container">
+		<img src="{HOME}/common/no-js.jpg">
+		<p>你的浏览器禁用了JavaScript, 请开启后刷新浏览器获得更好的体验!</p>
+	</div>
+</noscript>
+
+<div class="aw-register-box">
+	<div class="mod-head">
+		<a href="">
+			<img alt="" src="{HOME}/css/default/img/login_logo.png"></a>
+		<h1>注册新用户</h1>
+	</div>
+	<div class="mod-body">
+		<form id="register_form" method="post" action="?a=doRegister&c=user" class="aw-register-form">
+
+			<ul>
+				<li class="alert alert-danger hide error_message text-left"> <i class="icon icon-delete"></i> <em></em>
+				</li>
+				<li>
+					<input type="text" value="" errortips="用户名不符合要求" tips="请输入一个 2-14 位的用户名" placeholder="用户名" name="user_name" class="aw-register-name form-control">
+                    <span class='tips'></span>
+                </li>
+				<li>
+					<input type="text" errortips="邮箱格式不正确" value="" tips="请输入你常用的电子邮箱作为你的账号" name="email" placeholder="邮箱" class="aw-register-email form-control">
+					<a href="?c=user&a=msmRegister" style="float:right">或短信验证</a>
+                    <span class='tips'></span>
+				</li>
+                    <input type="password" errortips="密码不符合规则" tips="请输入 6-16 个字符,区分大小写" placeholder="密码" name="password" class="aw-register-pwd form-control">
+                    <span class='tips'></span>
+                </li>
+				<li class="more-information hide " id="hid">
+					<ul>
+						<li>
+							性别:
+							<label>
+								<input type="radio" value="1" id="sex" name="sex">男</label>
+							&nbsp;
+							<label>
+								<input type="radio" value="2" id="sex" name="sex">女</label>
+							&nbsp;
+							<label>
+								<input type="radio" checked="checked" value="3" id="sex" name="sex">保密</label>
+						</li>
+						<li>
+							职业:
+							<select name="job_id">
+								<option value="">--</option>
+								<option value="1">销售</option>
+								<option value="2">市场/市场拓展/公关</option>
+								<option value="3">商务/采购/贸易</option>
+								<option value="4">计算机软、硬件/互联网/IT</option>
+								<option value="5">电子/半导体/仪表仪器</option>
+								<option value="6">通信技术</option>
+								<option value="7">客户服务/技术支持</option>
+								<option value="8">行政/后勤</option>
+								<option value="9">人力资源</option>
+								<option value="10">高级管理</option>
+								<option value="11">生产/加工/制造</option>
+								<option value="12">质控/安检</option>
+								<option value="13">工程机械</option>
+								<option value="14">技工</option>
+								<option value="15">财会/审计/统计</option>
+								<option value="16">金融/银行/保险/证券/投资</option>
+								<option value="17">建筑/房地产/装修/物业</option>
+								<option value="18">交通/仓储/物流</option>
+								<option value="19">普通劳动力/家政服务</option>
+								<option value="20">零售业</option>
+								<option value="21">教育/培训</option>
+								<option value="22">咨询/顾问</option>
+								<option value="23">学术/科研</option>
+								<option value="24">法律</option>
+								<option value="25">美术/设计/创意</option>
+								<option value="26">编辑/文案/传媒/影视/新闻</option>
+								<option value="27">酒店/餐饮/旅游/娱乐</option>
+								<option value="28">化工</option>
+								<option value="29">能源/矿产/地质勘查</option>
+								<option value="30">医疗/护理/保健/美容</option>
+								<option value="31">生物/制药/医疗器械</option>
+								<option value="32">翻译（口译与笔译）</option>
+								<option value="33">公务员</option>
+								<option value="34">环境科学/环保</option>
+								<option value="35">农/林/牧/渔业</option>
+								<option value="36">兼职/临时/培训生/储备干部</option>
+								<option value="37">在校学生</option>
+								<option value="38">其他</option>
+							</select>
+						</li>
+
+						<li>
+                            <div style="height:30px;width:400px">
+							所在城市:
+							<select style="display:inline-block" class="select_area" name="province" id="province">
+							</select>
+                            <select class="select_area" name="city" id="city"></select>
+							<select class="select_area" name="city" id="area"></select>
+                            </div>
+						</li>
+<script>
+$.get(
+    '{HOME}/js/ChinaArea.xml',
+    '',
+    function(res){
+        xmldom = $(res);
+        xmldom.find('province').each(function(index,el){                    
+            pro_name = $(el).attr('province');
+            pro_id = $(el).attr('provinceID'); 
+            $('<option value="'+pro_id+'">'+pro_name+'</option>').appendTo('#province');  
+        })
+
+    },
+    'xml'
+)
+$('#province').change(function(){
+    pid = $(this).val().substr(0,2);
+    $('#city').empty().append('<option value="0">-请选择-</option>');
+    $('#area').empty().append('<option value="0">-请选择-</option>');
+    xmldom.find('City').each(function(index,el){
+        city_name = $(el).attr('City');
+        city_id = $(el).attr('CityID');
+        cid = city_id.substr(0,2);                                   
+        // console.log(cid)                                   
+        if (pid==cid) {
+            $('<option value="'+city_id+'">'+city_name+'</option>').appendTo('#city')
+        };
+
+    })
+})
+$('#city').change(function(){
+    $('#area').empty().append('<option value="0">-请选择-</option>');
+    cidd = $(this).val().substr(0,4);                                   
+    xmldom.find('Piecearea').each(function(index,el){
+        area_name=$(el).attr('Piecearea');
+        area_id=$(el).attr('PieceareaID');
+        aid=area_id.substr(0,4);
+        if (aid==cidd) {
+            $('<option value="'+area_id+'">'+area_name+'</option>').appendTo('#area')            
+        };
+    })
+})
+
+</script>
+						<li>
+							<input type="text" name="signature" value="" id="welcome_signature" placeholder="一句话介绍" class="form-control"></li>
+					</ul>
+				</li>
+				<li>
+					<hr>
+					<a class="more-information-btn" id="more">更多资料</a>
+				</li>
+				<li class="aw-register-verify">
+					<img src="?m=home&a=createCaptcha&c=user" onclick="this.src='?c=user&a=createCaptcha&'".Math.random() id="captcha" class="pull-right">
+
+					<input type="text" placeholder="验证码" name="seccode_verify" class="form-control"></li>
+				<li class="last">
+					<label>
+						<input type="checkbox" name="agreement" value="agree" checked="checked">我同意</label>
+					<a class="aw-agreement-btn" href="javascript:;">用户协议</a>
+					<a class="pull-right" href="?/account/login/">已有账号?</a>
+					<div class="aw-register-agreement hidden">
+						<div id="register_agreement" class="aw-register-agreement-txt">
+							当您申请用户时，表示您已经同意遵守本规章。
+							<br>
+							欢迎您加入本站点参与交流和讨论，本站点为社区，为维护网上公共秩序和社会稳定，请您自觉遵守以下条款：
+							<br>
+							<br>
+							一、不得利用本站危害国家安全、泄露国家秘密，不得侵犯国家社会集体的和公民的合法权益，不得利用本站制作、复制和传播下列信息：
+							<br>
+							&#12288;（一）煽动抗拒、破坏宪法和法律、行政法规实施的；
+							<br>
+							&#12288;（二）煽动颠覆国家政权，推翻社会主义制度的；
+							<br>
+							&#12288;（三）煽动分裂国家、破坏国家统一的；
+							<br>
+							&#12288;（四）煽动民族仇恨、民族歧视，破坏民族团结的；
+							<br>
+							&#12288;（五）捏造或者歪曲事实，散布谣言，扰乱社会秩序的；
+							<br>
+							&#12288;（六）宣扬封建迷信、淫秽、色情、赌博、暴力、凶杀、恐怖、教唆犯罪的；
+							<br>
+							&#12288;（七）公然侮辱他人或者捏造事实诽谤他人的，或者进行其他恶意攻击的；
+							<br>
+							&#12288;（八）损害国家机关信誉的；
+							<br>
+							&#12288;（九）其他违反宪法和法律行政法规的；
+							<br>
+							&#12288;（十）进行商业广告行为的。
+							<br>
+							<br>
+							二、互相尊重，对自己的言论和行为负责。
+							<br>
+							三、禁止在申请用户时使用相关本站的词汇，或是带有侮辱、毁谤、造谣类的或是有其含义的各种语言进行注册用户，否则我们会将其删除。
+							<br>
+							四、禁止以任何方式对本站进行各种破坏行为。
+							<br>
+							五、如果您有违反国家相关法律法规的行为，本站概不负责，您的登录信息均被记录无疑，必要时，我们会向相关的国家管理部门提供此类信息。
+						</div>
+					</div>
+
+				</li>
+				<li class="clearfix">
+					<input type="submit" class="btn btn-large btn-blue btn-block" value="注册" />
+				</li>
+			</ul>
+		</form>
+	</div>
+	<div class="mod-footer"></div>
+</div>
+
+<div class="aw-footer-wrap">
+	<div class="aw-footer">
+		Copyright &copy; 2016-2099, All Rights Reserved
+		<span class="hidden-xs">
+			Powered By
+			<a target="blank" href="http://helloitbull.net/">有问必答 1.0</a>
+		</span>
+
+	</div>
+</div>
+
+</body>
+</html>
+{literal}
+<script>
+$('#more').click(function(){
+   $('#hid').toggle(500)
+})   
+    var oUser = getObj('user_name');
+    var oEmail = getObj('email');
+    var oPass = getObj('password');
+
+    oUser.onkeyup = oPass.onkeyup = oEmail.onkeyup = check;
+
+    /**
+     * [check description]
+     * @return {[type]} [description]
+     */
+    function check()
+    {
+        var reg = null;
+        var _this = this;
+        switch(this.name){
+            case 'user_name':
+                reg = /^[a-z0-9_-]{5,29}$/;
+                if (reg.test(this.value)){
+                    $$.request({
+                        method:'post',
+                        url:'?m=home&a=check&c=user',
+                        data:'user='+this.value,
+                        dataType:'text',
+                        callback:function(res){
+                            if (res.status) {
+                                _this.nextElementSibling.innerHTML = '<font color="red">该用户名已被注册</font>';
+                                return false;
+                            }else{
+                                _this.nextElementSibling.innerHTML = '<font color="green">该用户名可以使用</font>';
+                                return true;
+                            }
+                        }
+                    });               
+                }else{
+                    this.nextElementSibling.innerHTML = '<font color="red">'+this.getAttribute('errortips')+'</font>';
+                }
+
+                break;
+            case 'password':
+                reg = /^[a-z0-9_-]{6,18}$/;
+                break;
+            case 'email':
+                reg = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+                
+                break;
+        }
+        if (reg.test(this.value)) {
+            this.nextElementSibling.innerHTML = '<font color="green">正确</font>';
+        }else{
+            this.nextElementSibling.innerHTML = '<font color="red">'+this.getAttribute('errortips')+'</font>';
+        }
+    }
+
+    /**
+     * [getObj description]
+     * @param  {[type]} name [description]
+     * @return {[type]}      [description]
+     */
+    function getObj(name)
+    {
+        return document.getElementsByName(name)[0];
+    }
+</script>
+{/literal}

@@ -1,0 +1,11 @@
+<IfModule rewrite_module>
+    #开启重写引擎
+    RewriteEngine on
+    #如果解析的路径是一个目录的话，就不用重写规则进行重写 
+    RewriteCond %{REQUEST_FILENAME} !-d
+    #如果解析的路径是一个文件，也就不重写
+    RewriteCond %{REQUEST_FILENAME} !-f
+    
+    #重写规则,将网站1106后面的参数解析的时候，放在index.php后面进行处理
+    RewriteRule (.*) index.php/$1
+</IfModule>
